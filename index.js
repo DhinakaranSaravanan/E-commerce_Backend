@@ -9,7 +9,7 @@ const path = require('path')
 mongoose.connect('mongodb+srv://dhinakaran:9943482529malai@cluster0.aok3wxj.mongodb.net/e-commerce').then(() => console.log('MongoDB Database Connected!'));
 
 const app = express()
-const POSRT = 4000
+const PORT = process.env.PORT || 4000
 app.use(express.json());
 app.use(cors());
 
@@ -258,6 +258,6 @@ app.post('/getcartdata', fetchData, async(req, res) => {
    res.json(cart.cartData)
 })
 
-app.listen(POSRT, () => {
+app.listen(PORT, () => {
    console.log("server running on  PORT-4000");
 })
