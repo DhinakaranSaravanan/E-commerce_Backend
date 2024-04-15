@@ -27,7 +27,7 @@ app.use('/images', express.static('upload/images'))
 app.post('/upload', upload.single('product'),(req, res) => {
    res.json({
       success:true,
-      image_url: `https://dkshop-ecommerceapi.onrender.com/${req.file.filename}`
+      image_url: `https://dkshop-ecommerceapi.onrender.com/images/${req.file.filename}`
    })
 })
 
